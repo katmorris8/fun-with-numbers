@@ -1,11 +1,10 @@
 import React from 'react';
+import Button from './Button';
 
 function Nav() {
   return (
     <div>
-      <button>trivia</button>
-      <button>math</button>
-      <button>date</button>
+      <Button name="trivia" />
     </div>
   )
 }

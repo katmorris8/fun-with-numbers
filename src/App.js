@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Nav from './Nav';
+import Nav from './Nav';
 import Fact from './Fact';
-import Button from './Button';
 
 class App extends Component {
   constructor() {
@@ -23,8 +22,7 @@ class App extends Component {
     return (
       <div className="">
         <h1>fun facts about numbers</h1>
-        {/* <Nav />  */}
-        <Button name={this.state.type} click={this.handleClick} />
+        <Nav names={this.state.type} click={this.handleClick} /> 
         <Fact fact={this.state.fact} />
       </div>
     );

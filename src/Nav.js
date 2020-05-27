@@ -4,7 +4,7 @@ import Button from './Button';
 function Nav() {
   return (
     <div>
-      <Button name="trivia" />
+      <Button name="random" />
     </div>
   )
 }

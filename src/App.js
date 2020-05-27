@@ -13,8 +13,8 @@ class App extends Component {
     }
   }
 
-  async componentDidMount() {
-    const response = await fetch(`http://numbersapi.com/random/${this.state.type}?json`);
+  handleClick = async (e) => {
+    const response = await fetch(`http://numbersapi.com/random/${e.target.value}?json`);
     const json = await response.json();
     this.setState({ fact: json.text });
   }
@@ -24,7 +24,7 @@ class App extends Component {
       <div className="">
         <h1>fun facts about numbers</h1>
         {/* <Nav />  */}
-        <Button name={this.state.type} />
+        <Button name={this.state.type} click={this.handleClick} />
         <Fact fact={this.state.fact} />
       </div>
     );

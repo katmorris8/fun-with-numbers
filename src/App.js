@@ -9,9 +9,16 @@ class App extends Component {
     super();
     this.state ={
       type: 'random',
-      fact: 'test',
+      fact: '',
     }
   }
+
+  async componentDidMount() {
+    const response = await fetch('http://numbersapi.com/random/trivia?json');
+    const json = await response.json();
+    this.setState({ fact: json.text })
+  }
+
   render() {
     return (
       <div className="">

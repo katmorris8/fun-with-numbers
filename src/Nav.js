@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from './Button';
 
-function Nav() {
+const Nav = props => {
   return (
     <div>
-      <Button name="random" />
+      <Button name={props.names} click={props.click} />
     </div>
   )
 }

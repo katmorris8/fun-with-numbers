@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      type: 'trivia',
+      types: ['trivia', 'math', 'date', 'year'],
       fact: '',
     }
   }
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="">
         <h1>fun facts about numbers</h1>
-        <Nav names={this.state.type} click={this.handleClick} /> 
+        <Nav names={this.state.types} click={this.handleClick} />
         <Fact fact={this.state.fact} />
       </div>
     );

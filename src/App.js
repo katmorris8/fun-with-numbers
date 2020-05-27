@@ -7,16 +7,16 @@ import Button from './Button';
 class App extends Component {
   constructor() {
     super();
-    this.state ={
-      type: 'random',
+    this.state = {
+      type: 'trivia',
       fact: '',
     }
   }
 
   async componentDidMount() {
-    const response = await fetch('http://numbersapi.com/random/trivia?json');
+    const response = await fetch(`http://numbersapi.com/random/${this.state.type}?json`);
     const json = await response.json();
-    this.setState({ fact: json.text })
+    this.setState({ fact: json.text });
   }
 
   render() {

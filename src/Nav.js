@@ -3,7 +3,7 @@ import Button from './Button';
 
 const Nav = ({ names, click}) => {
   return (
-    <div>
+    <div className="flex justify-center">
       {
         names.map(name => {
           return(

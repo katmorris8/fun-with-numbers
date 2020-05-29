@@ -1,0 +1,10 @@
+.fact {
+  width: 60%;
+  margin: 2rem auto;
+}
+@media only screen and (max-width: 480px) {
+  .fact {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}

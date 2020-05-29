@@ -1,8 +1,9 @@
 import React from 'react';
+import './Fact.css';
 
 const Fact = props => {
   return (
-    <p>{props.fact}</p>
+    <p className="fact avenir">{props.fact}</p>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-const Nav = ({ names, click}) => {
+const Nav = ({ names, click }) => {
   return (
     <div className="flex justify-center">
       {

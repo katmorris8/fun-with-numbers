@@ -15,12 +15,10 @@ class App extends Component {
 
   handleClick = async (e) => {
     try {
-      let response;
       if (e.target.value === 'random') {
-        response = await fetch(`http://numbersapi.com/random?json`);
-      } else {
-        response = await fetch(`http://numbersapi.com/random/${e.target.value}?json`);
+        e.target.value = ''
       }
+      const response = await fetch(`http://numbersapi.com/random/${e.target.value}?json`);
       const json = await response.json();
       this.setState({ fact: json.text });
     } catch (error) {

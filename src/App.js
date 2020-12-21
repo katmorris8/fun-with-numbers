@@ -8,14 +8,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      types: ['trivia', 'math', 'date', 'year'],
+      types: ['trivia', 'math', 'date', 'year', 'random'],
       fact: '',
     }
   }
 
   handleClick = async (e) => {
     try {
-      const response = await fetch(`http://numbersapi.com/random/${e.target.value}?json`);
+      let response;
+      if (e.target.value === 'random') {
+        response = await fetch(`http://numbersapi.com/random?json`);
+      } else {
+        response = await fetch(`http://numbersapi.com/random/${e.target.value}?json`);
+      }
       const json = await response.json();
       this.setState({ fact: json.text });
     } catch (error) {

@@ -1,10 +1,13 @@
-import React from 'react';
-import './Fact.css';
+import React from "react";
+import "./Fact.css";
 
-const Fact = props => {
+const Fact = ({ fact, number }) => {
   return (
-    <p className="fact avenir">{props.fact}</p>
-  )
-}
+    <>
+      <p className="fact avenir">{number}</p>
+      <p className="fact avenir">{fact}</p>
+    </>
+  );
+};
 
 export default Fact;

@@ -1,45 +1,44 @@
-import React, { Component } from 'react';
-import './App.css';
-import Nav from './Nav';
-import Fact from './Fact';
-import 'tachyons';
+import React from "react";
+import "./App.css";
+import Nav from "./Nav";
+import Fact from "./Fact";
+import "tachyons";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      types: ['random', 'trivia', 'math', 'date', 'year'],
-      number: '',
-      fact: '',
-    }
-  }
+function App() {
+  const state = {
+    types: ["random", "trivia", "math", "date", "year"],
+    number: "",
+    fact: "",
+  };
 
-  handleClick = async (e) => {
+  async function handleClick(e) {
     try {
-      if (e.target.value === 'random') {
-        e.target.value = ''
+      if (e.target.value === "random") {
+        e.target.value = "";
       }
-      const response = await fetch(`http://numbersapi.com/random/${e.target.value}?json`);
+      const response = await fetch(
+        `http://numbersapi.com/random/${e.target.value}?json`
+      );
       const json = await response.json();
-      this.setState({ 
+      this.setState({
         number: json.number,
-        fact: json.text
+        fact: json.text,
       });
     } catch (error) {
-      this.setState({ fact: 'sorry! could not find fact. please try again later' });
+      this.setState({
+        fact: "sorry! could not find fact. please try again later",
+      });
       throw error;
     }
-  }
+  };
 
-  render() {
-    return (
-      <div className="app">
-        <h1 className="tc f1 avenir">fun facts about numbers</h1>
-        <Nav names={this.state.types} click={this.handleClick} />
-        <Fact fact={this.state.fact} number={this.state.number} />
-      </div>
-    );
-  }
+  return (
+    <div className="app">
+      <h1 className="tc f1 avenir">fun facts about numbers</h1>
+      <Nav names={state.types} click={handleClick} />
+      <Fact fact={state.fact} number={state.number} />
+    </div>
+  );
 }
 
 export default App;

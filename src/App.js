@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Nav from "./Nav";
 import Fact from "./Fact";
 import "tachyons";
 
 function App() {
-  const state = {
+  const [state, setState] = useState({
     types: ["random", "trivia", "math", "date", "year"],
-    number: "",
-    fact: "",
-  };
+    number: '',
+    fact: ''
+  })
 
   async function handleClick(e) {
     try {
@@ -20,12 +20,12 @@ function App() {
         `http://numbersapi.com/random/${e.target.value}?json`
       );
       const json = await response.json();
-      this.setState({
+      setState({
         number: json.number,
         fact: json.text,
       });
     } catch (error) {
-      this.setState({
+      setState({
         fact: "sorry! could not find fact. please try again later",
       });
       throw error;

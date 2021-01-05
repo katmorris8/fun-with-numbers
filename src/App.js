@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import Fact from "./Fact";
 import "tachyons";
 
-function App() {
+const App = () => {
   const [state, setState] = useState({
     types: ["random", "trivia", "math", "date", "year"],
     number: '',
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="app">
       <h1 className="tc f1 avenir">fun facts about numbers</h1>
-      <Nav names={state.types} click={handleClick} />
+      <Nav names={state.types} click={setState} />
       <Fact fact={state.fact} number={state.number} />
     </div>
   );

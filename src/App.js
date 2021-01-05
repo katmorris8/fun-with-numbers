@@ -5,10 +5,10 @@ import Fact from "./Fact";
 import "tachyons";
 
 const App = () => {
+  const types = ["random", "trivia", "math", "date", "year"]
   const [state, setState] = useState({
-    types: ["random", "trivia", "math", "date", "year"],
     number: '',
-    fact: ''
+    fact: 'Click on a button to get a fact!'
   })
 
   async function handleClick(e) {
@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div className="app">
       <h1 className="tc f1 avenir">fun facts about numbers</h1>
-      <Nav names={state.types} click={setState} />
+      <Nav names={types} click={handleClick} />
       <Fact fact={state.fact} number={state.number} />
     </div>
   );

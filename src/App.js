@@ -13,7 +13,7 @@ const App = () => {
   });
 
   function handleClick(e) {
-    setState({currentType: e.target.value})
+    setState({currentType: e.target.value === 'random' ? '' : e.target.value})
   }
   
   const {type, text, number, found, status} = useFetch(`http://numbersapi.com/random/${currentType}?json`)

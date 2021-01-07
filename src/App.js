@@ -7,9 +7,9 @@ import { useFetch } from "./useFetch";
 
 const App = () => {
   const types = ["random", "trivia", "math", "date", "year"];
-  const [{ currentType, initialMessage }, setState] = useState({
+  const [{ currentType, welcomeMessage }, setState] = useState({
     currentType: null,
-    initialMessage: "Click on a button to get a fact!",
+    welcomeMessage: "Welcome! Click on a button to get a fact.",
   });
 
   function handleClick(e) {
@@ -25,7 +25,7 @@ const App = () => {
     <div className="app">
       <h1 className="tc f1 avenir">fun facts about numbers</h1>
       <Nav names={types} click={handleClick} />
-      <Fact fact={found ? text : initialMessage} number={found ? number : ""} />
+      <Fact fact={found ? text : welcomeMessage} number={found ? number : ""} />
     </div>
   );
 };

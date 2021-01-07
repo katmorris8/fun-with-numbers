@@ -32,7 +32,5 @@ export const useFetch = (url) => {
       });
   }, [url]);
 
-  console.log(state.found, state.status);
-
   return state;
 };

@@ -1,6 +1,7 @@
 .nav-button {
-  margin: 1rem;
-  padding: 1rem 2rem;
+  width: 125px;
+  margin: .5rem;
+  padding: 1rem 0;
   outline: none;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -8,7 +9,8 @@
 
 @media only screen and (max-width: 480px) {
   .nav-button {
+    width: 110px;
     margin: .25rem;
-    padding: .75rem 1.25rem;
+    padding: .75rem 0;
   }
 }

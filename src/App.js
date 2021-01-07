@@ -25,7 +25,7 @@ const App = () => {
     <div className="app">
       <h1 className="tc f1 avenir">fun facts about numbers</h1>
       <Nav names={types} click={handleClick} />
-      <Fact fact={type ? text : initialMessage} number={found ? number : ""} />
+      <Fact fact={found ? text : initialMessage} number={found ? number : ""} />
     </div>
   );
 };

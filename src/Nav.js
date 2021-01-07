@@ -3,7 +3,7 @@ import Button from './Button';
 
 const Nav = ({ names, click }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-wrap justify-center">
       {
         names.map(name => {
           return(
